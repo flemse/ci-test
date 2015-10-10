@@ -1,2 +1,15 @@
-node_js:
-  - 4.1.2
+language: node_js
+#node_js:
+#  - "4.1.2"
+
+install:
+  - npm install -g ember-cli@1.13.8
+  - npm install
+  - bower install
+
+before_script: mkdir -p shippable/testresults
+
+script: ember test -r xunit | grep "<test*" > shippable/testresults/results.xml
+
+notifications:
+  email: false
