@@ -2,6 +2,8 @@ language: node_js
 #node_js:
 #  - "4.1.2"
 
+cache: true
+
 install:
   - npm install -g ember-cli@1.13.8
   - npm install
